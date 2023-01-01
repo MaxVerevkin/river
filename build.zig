@@ -128,7 +128,7 @@ pub fn build(b: *Build) !void {
     scanner.generate("wp_tearing_control_manager_v1", 1);
 
     scanner.generate("zriver_control_v1", 1);
-    scanner.generate("zriver_status_manager_v1", 4);
+    scanner.generate("zriver_status_manager_v1", 5);
     scanner.generate("river_layout_manager_v3", 2);
 
     scanner.generate("zwlr_layer_shell_v1", 4);
