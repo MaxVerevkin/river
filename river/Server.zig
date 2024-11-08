@@ -66,7 +66,7 @@ linux_dmabuf: ?*wlr.LinuxDmabufV1 = null,
 single_pixel_buffer_manager: *wlr.SinglePixelBufferManagerV1,
 
 viewporter: *wlr.Viewporter,
-fractional_scale_manager: *wlr.FractionalScaleManagerV1,
+// fractional_scale_manager: *wlr.FractionalScaleManagerV1,
 compositor: *wlr.Compositor,
 subcompositor: *wlr.Subcompositor,
 cursor_shape_manager: *wlr.CursorShapeManagerV1,
@@ -145,7 +145,7 @@ pub fn init(server: *Server, runtime_xwayland: bool) !void {
         .single_pixel_buffer_manager = try wlr.SinglePixelBufferManagerV1.create(wl_server),
 
         .viewporter = try wlr.Viewporter.create(wl_server),
-        .fractional_scale_manager = try wlr.FractionalScaleManagerV1.create(wl_server, 1),
+        // .fractional_scale_manager = try wlr.FractionalScaleManagerV1.create(wl_server, 1),
         .compositor = compositor,
         .subcompositor = try wlr.Subcompositor.create(wl_server),
         .cursor_shape_manager = try wlr.CursorShapeManagerV1.create(server.wl_server, 1),
@@ -312,7 +312,7 @@ fn allowlist(server: *Server, global: *const wl.Global) bool {
     return global == server.shm.global or
         global == server.single_pixel_buffer_manager.global or
         global == server.viewporter.global or
-        global == server.fractional_scale_manager.global or
+        // global == server.fractional_scale_manager.global or
         global == server.compositor.global or
         global == server.subcompositor.global or
         global == server.cursor_shape_manager.global or
